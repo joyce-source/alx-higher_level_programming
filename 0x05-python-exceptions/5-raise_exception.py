@@ -4,4 +4,3 @@ def raise_exception():
         raise TypeError("This is a type exception")
     except TypeError as e:
         print(e)
-
