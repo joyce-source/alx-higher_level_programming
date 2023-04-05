@@ -1,1 +1,1 @@
-one string
+1
