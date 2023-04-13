@@ -1,0 +1,9 @@
+The MyList class is a custom list subclass that inherits from the built-in list class in Python. This means that it has all the methods and attributes of a regular list, but can also add its own custom methods.
+
+In this case, the MyList class adds a new public instance method called print_sorted. This method takes no arguments and simply prints the contents of the list in ascending order.
+
+To do this, the print_sorted method first creates a new sorted list using the built-in sorted function, which returns a new list containing the same elements as the original list but sorted in ascending order.
+
+The method then simply prints the sorted list using the built-in print function. By default, print will print each element of the list on a separate line.
+
+Overall, the MyList class is a simple but useful customization of the built-in list class that adds a handy new method for printing the contents of the list in sorted order.
