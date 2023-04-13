@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 
 """
-This module contains a function for deserializing a JSON string into a Python object.
+module contains a function for deserializing a JSON string to a Python object.
 
-The `json` module is used for deserialization, so the function assumes that the input
-string is a valid JSON representation of a Python object.
+So function assumes that input string is valid representation of Python object
 
 Example Usage:
 --------------
@@ -18,7 +17,9 @@ my_dict = from_json_string(json_string)
 
 import json
 
+
 def from_json_string(my_str):
+
     """
     Deserialize a JSON string into a Python object.
 

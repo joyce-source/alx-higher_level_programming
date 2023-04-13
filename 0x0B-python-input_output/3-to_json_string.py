@@ -18,6 +18,7 @@ json_string = to_json_string(my_dict)
 
 import json
 
+
 def to_json_string(my_obj):
     """
     Serialize a Python object to JSON format.
