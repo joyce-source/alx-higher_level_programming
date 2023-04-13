@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 This module contains a function for deserializing a JSON string into a Python object.
 
