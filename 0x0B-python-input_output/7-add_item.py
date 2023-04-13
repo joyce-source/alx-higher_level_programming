@@ -1,4 +1,4 @@
-#!/usr/bim/python3
+#!/usr/bin/python3
 
 """
 script adds all arg to Python list and saves them to file in JSON format.
