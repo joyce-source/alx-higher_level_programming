@@ -13,8 +13,9 @@ def load_from_json_file(filename):
     """
         Load an object from a JSON file.
 
-    Args:
-        filename: A string representing the path to the JSON file.
+    Argsef load_from_json_file(filename)
+
+    filename: A string representing the path to the JSON file.
 
     Returns:
         The Python object represented by the JSON filename
