@@ -1,3 +1,4 @@
+# Import the required libraries
 import mysql.connector
 
 # Connect to the MySQL server
