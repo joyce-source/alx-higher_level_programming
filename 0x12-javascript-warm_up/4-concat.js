@@ -5,6 +5,5 @@ const arg2 = process.argv[3];
 if (arg1 !== undefined && arg2 !== undefined) {
   console.log(`${arg1} is ${arg2}`);
 } else {
-  console.log("Please provide two arguments.");
+  console.log('Please provide two arguments.');
 }
-
