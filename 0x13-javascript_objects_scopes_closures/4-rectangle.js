@@ -30,7 +30,7 @@ class Rectangle {
     }
 
     [this.width, this.height] = [this.height, this.width];
-    }
+  }
 
   double () {
     if (!this.width || !this.height) {
