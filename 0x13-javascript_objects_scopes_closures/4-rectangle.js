@@ -30,8 +30,7 @@ class Rectangle {
     }
 
     [this.width, this.height] = [this.height, this.width];
-    console.log('Rectangle rotated');
-  }
+    }
 
   double () {
     if (!this.width || !this.height) {
@@ -41,7 +40,6 @@ class Rectangle {
 
     this.width *= 2;
     this.height *= 2;
-    console.log('Rectangle dimensions doubled');
   }
 }
 
