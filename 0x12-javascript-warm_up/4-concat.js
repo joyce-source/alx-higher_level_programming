@@ -1,9 +1,4 @@
 #!/usr/bin/node
-const arg1 = process.argv[2];
-const arg2 = process.argv[3];
+const [arg1, arg2] = process.argv.slice(2);
 
-if (arg1 !== undefined && arg2 !== undefined) {
-  console.log(`${arg1} is ${arg2}`);
-} else {
-  console.log('Please provide two arguments.');
-}
+console.log(arg1 + ' is ' + arg2);
