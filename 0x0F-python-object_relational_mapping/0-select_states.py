@@ -36,11 +36,11 @@ def list_states(username, password, database):
     for row in rows:
         print(row)
 
-   """Close the cursor and database connection"""
+    """Close the cursor and database connection"""
     cursor.close()
     db.close()
 
-""" Run the script with the provided arguments"""
+    """ Run the script with the provided arguments"""
 
 
 if __name__ == "__main__":
