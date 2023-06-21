@@ -2,8 +2,10 @@
 
 import MySQLdb
 
+
 def list_states(username, password, database):
-      """
+
+    """
     Lists all states from the database hbtn_0e_0_usa.
 
     Args:
@@ -13,9 +15,13 @@ def list_states(username, password, database):
 
     Returns:
         None
-    """
+"""
     # Connect to the MySQL server
-    db = MySQLdb.connect(user=username, passwd=password, db=database, host='localhost', port=3306)
+    db = MySQLdb.connect(user=username,
+                         passwd=password,
+                         db=database,
+                         host='localhost',
+                         port=3306)
 
     # Create a cursor object to execute SQL queries
     cursor = db.cursor()
@@ -35,6 +41,8 @@ def list_states(username, password, database):
     db.close()
 
 # Run the script with the provided arguments
+
+
 if __name__ == "__main__":
     import sys
 
@@ -45,4 +53,3 @@ if __name__ == "__main__":
         password = sys.argv[2]
         database = sys.argv[3]
         list_states(username, password, database)
-
