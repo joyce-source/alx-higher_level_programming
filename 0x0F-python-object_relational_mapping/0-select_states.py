@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import MySQLdb
 
 def list_states(username, password, database):
