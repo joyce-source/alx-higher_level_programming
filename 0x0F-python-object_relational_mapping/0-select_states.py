@@ -3,6 +3,17 @@
 import MySQLdb
 
 def list_states(username, password, database):
+      """
+    Lists all states from the database hbtn_0e_0_usa.
+
+    Args:
+        username (str): The MySQL username.
+        password (str): The MySQL password.
+        database (str): The database name.
+
+    Returns:
+        None
+    """
     # Connect to the MySQL server
     db = MySQLdb.connect(user=username, passwd=password, db=database, host='localhost', port=3306)
 
