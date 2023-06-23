@@ -1,55 +1,54 @@
 #!/usr/bin/python3
+"""
+This script lists all states from the database hbtn_0e_0_usa.
+"""
 
 import MySQLdb
-
 
 def list_states(username, password, database):
 
     """
-    Lists all states from the database hbtn_0e_0_usa.
-
-    Args:
-        username (str): The MySQL username.
-        password (str): The MySQL password.
-        database (str): The database name.
-
-    Returns:
-        None
+Connects to the MySQL server and lists all states from the specified database
+Arguments:
+        - username: MySQL username
+        - password: MySQL password
+        - database: Database name
 """
-    """Connect to the MySQL server"""
-    db = MySQLdb.connect(user=username,
-                         passwd=password,
-                         db=database,
-                         host='localhost',
-                         port=3306)
 
-    """Create a cursor object to execute SQL queries"""
-    cursor = db.cursor()
+# Connect to the MySQL server
+db = MySQLdb.connect(host='localhost', port=3306, username='root', passwd='root', db='database')
 
-    """Execute the SQL query to fetch all states"""
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+# Create a cursor object to interact with the database
+cursor = db.cursor()
 
-    """Fetch all the rows returned by the query"""
-    rows = cursor.fetchall()
+try:
+# Execute the query to retrieve all states
+ query = "SELECT * FROM states ORDER BY id ASC"
+ cursor.execute(query)
 
-    """Print the results"""
-    for row in rows:
-        print(row)
+# Fetch all the rows returned by the query
+ states = cursor.fetchall()
 
-    """Close the cursor and database connection"""
+# Print the results
+
+ for state in states:
+    print(state)
+except MySQLdb.Error as e:
+     print("Error executing MySQL query:", e)
+finally:
+
+# Close the cursor and database connection
+ if cursor:
     cursor.close()
-    db.close()
-
-    """ Run the script with the provided arguments"""
-
+    if db:
+        db.close()
 
 if __name__ == "__main__":
-    import sys
+# Provide your MySQL username, password, and database name
+ username = 'root'
+ password = 'root'
+ database = "hbtn_0e_0_usa"
 
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <username> <password> <database>")
-    else:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        list_states(username, password, database)
+# Call the function to list states
+ list_states(username, password, database)
+
