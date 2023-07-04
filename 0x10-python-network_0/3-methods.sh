@@ -1,6 +1,3 @@
 #!/bin/bash
 # This script displays all HTTP methods accepted by the server for a given URL
-
-URL=$1
-curl -sI "$URL" | awk '/Allow:/ {print substr($0, index($0,$2))}'
-
+curl -s -X OPTIONS -i "$1" | awk '/^Allow:/ {print substr($0, 8)}'
