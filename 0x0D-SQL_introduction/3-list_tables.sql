@@ -1,26 +1,16 @@
--- Create the stored procedure
-DELIMITER //
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS hbtn_test_db_0;
 
-CREATE PROCEDURE ListTables(IN dbName VARCHAR(255))
-BEGIN
-  -- Declare variables
-  DECLARE tableName VARCHAR(255);
+-- Use the newly created database
+USE hbtn_test_db_0;
 
-  -- Create a temporary table to store the table names
-  CREATE TEMPORARY TABLE IF NOT EXISTS temp_tables (table_name VARCHAR(255));
+-- Create three tables
+CREATE TABLE IF NOT EXISTS holbteron_0 (id INT, name VARCHAR(255));
+CREATE TABLE IF NOT EXISTS holbteron_1 (id INT, name VARCHAR(255));
+CREATE TABLE IF NOT EXISTS holbteron_2 (id INT, name VARCHAR(255));
 
-  -- Populate the temporary table with the table names
-  SET @query = CONCAT('INSERT INTO temp_tables (table_name) SELECT table_name FROM information_schema.TABLES WHERE table_schema = ''', dbName, ''';');
-  PREPARE stmt FROM @query;
-  EXECUTE stmt;
-  DEALLOCATE PREPARE stmt;
-
-  -- Select the table names from the temporary table
-  SELECT table_name AS 'Table' FROM temp_tables;
-
-  -- Drop the temporary table
-  DROP TABLE IF EXISTS temp_tables;
-END //
-
-DELIMITER ;
+-- Retrieve the table names
+SELECT table_name
+FROM information_schema.TABLES
+WHERE table_schema = 'hbtn_test_db_0';
 
