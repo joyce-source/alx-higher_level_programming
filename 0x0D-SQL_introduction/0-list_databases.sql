@@ -1,26 +1,7 @@
-# Import the required libraries
-import mysql.connector
+-- This script lists all databases on the MySQL server
 
-# Connect to the MySQL server
-connection = mysql.connector.connect(
-    host=" ",
-    user= " ",
-    password=" "
-)
+-- Select the 'schema_name' column from the 'information_schema.SCHEMATA' table
+-- 'schema_name' column contains the names of all databases
+SELECT schema_name AS "Database"
+FROM information_schema.SCHEMATA;
 
-# Create a cursor object to interact with the server
-cursor = connection.cursor()
-
-# Execute the query to retrieve the list of databases
-cursor.execute("SHOW DATABASES")
-
-# Fetch all the results from the query
-databases = cursor.fetchall()
-
-# Print the list of databases
-for database in databases:
-    print(database[0])
-
-# Close the cursor and connection
-cursor.close()
-connection.close()
